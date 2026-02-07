@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Khandelwal Classes – Engineering Aspirants</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<style>
+:root{
+--red:#ff6b6b;
+--orange:#ffa94d;
+--purple:#845ef7;
+--yellow:#ffd43b;
+--dark:#1f1f1f;
+--light:#ffffff;
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Inter;
+background:#fff;
+color:var(--dark);
+overflow-x:hidden;
+}
+
+/* ===== Animated background ===== */
+.bg{
+position:fixed;
+inset:0;
+z-index:-1;
+overflow:hidden;
+}
+
+.circle{
+position:absolute;
+border-radius:50%;
+filter:blur(45px);
+opacity:.35;
+animation:float 14s infinite alternate ease-in-out;
+}
+
+.c1{width:320px;height:320px;background:var(--purple);top:-80px;left:-80px;}
+.c2{width:280px;height:280px;background:var(--orange);top:45%;right:-100px;animation-delay:2s;}
+.c3{width:240px;height:240px;background:var(--red);bottom:-90px;left:40%;animation-delay:4s;}
+.c4{width:200px;height:200px;background:var(--yellow);top:18%;left:65%;animation-delay:6s;}
+
+@keyframes float{
+to{transform:translate(80px,-80px);}
+}
+
+/* ===== Navbar ===== */
+nav{
+position:sticky;
+top:0;
+background:rgba(255,255,255,.85);
+backdrop-filter:blur(15px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 70px;
+box-shadow:0 8px 25px rgba(0,0,0,.05);
+z-index:99;
+}
+
+.logo{
+font-weight:800;
+font-size:26px;
+background:linear-gradient(90deg,var(--red),var(--purple));
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.menu a{
+margin:0 16px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+.menu button{
+padding:10px 24px;
+border:none;
+border-radius:40px;
+background:linear-gradient(135deg,var(--red),var(--purple));
+color:#fff;
+cursor:pointer;
+}
+
+/* ===== Hero ===== */
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:120px 80px;
+gap:60px;
+position:relative;
+background:linear-gradient(120deg,
+#f6d3a3 0%,
+#f1dfcc 40%,
+#eaded6 70%,
+#e6e6e6 100%);
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:140%;
+height:120%;
+left:-20%;
+top:-60%;
+background:radial-gradient(circle at 30% 60%,
+rgba(255,169,77,.45),
+rgba(255,169,77,.15),
+transparent 70%);
+border-radius:0 0 70% 70%;
+z-index:-1;
+}
+.hero::after{
+content:"";
+position:absolute;
+bottom:-120px;
+left:-20%;
+width:140%;
+height:350px;
+background:white;
+transform:rotate(-6deg);
+border-radius:120px;
+}
+
+
+
+.hero h1{
+font-size:62px;
+font-weight:800;
+line-height:1.1;
+}
+
+.hero span{
+background:linear-gradient(90deg,var(--orange),var(--purple));
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+font-size:20px;
+opacity:.8;
+margin:25px 0;
+}
+
+.hero .btns button{
+margin-right:15px;
+padding:15px 36px;
+border:none;
+border-radius:40px;
+font-size:17px;
+cursor:pointer;
+}
+/*hero img section*/
+.hero-photo{
+width:340px;
+height:340px;
+border-radius:50%;
+border:8px solid #6b3f1d;
+overflow:hidden;
+box-shadow:0 25px 60px rgba(0,0,0,.25);
+background:white;
+flex-shrink:0;
+position:relative;
+z-index:2;
+}
+.hero::after{
+content:"";
+position:absolute;
+bottom:-180px;
+left:-20%;
+width:140%;
+height:420px;
+background:white;
+transform:rotate(-6deg);
+border-radius:160px;
+z-index:1;
+}
+@media(max-width:900px){
+.hero-photo{
+margin-top:40px;
+}
+}
+
+.primary{
+background:linear-gradient(135deg,var(--red),var(--purple));
+color:white;
+}
+
+.secondary{
+background:white;
+border:2px solid var(--purple);
+color:var(--purple);
+}
+
+.hero-img{
+font-size:260px;
+animation:pulse 3s infinite alternate;
+}
+
+@keyframes pulse{
+to{transform:scale(1.05);}
+}
+
+/* ===== Sections ===== */
+section{
+padding:90px 70px;
+}
+
+h2{
+font-size:46px;
+margin-bottom:50px;
+text-align:center;
+}
+
+/* ===== Cards ===== */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95); /* almost solid white */
+  color: var(--dark); /* ensures text is visible */
+  backdrop-filter: blur(10px);
+  padding: 35px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.08);
+  transition: .4s;
+  text-align: center; /* center the text */
+  font-weight: 600;
+  font-size: 18px;
+}
+
+
+.card:hover{
+transform:translateY(-15px) scale(1.05);
+}
+/*courses*/
+/* ===== Premium Course Gallery ===== */
+.course-section{
+padding:90px 8%;
+background:#fff;
+text-align:center;
+}
+
+.course-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:40px;
+perspective:1200px;
+}
+
+.course-card{
+position:relative;
+height:340px;
+overflow:hidden;
+border-radius:28px;
+clip-path:ellipse(85% 100% at 0% 50%);
+box-shadow:0 20px 50px rgba(0,0,0,.12);
+transition:.6s ease;
+transform-style:preserve-3d;
+cursor:pointer;
+}
+
+.course-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.6s ease;
+}
+
+.course-card::before{
+content:"";
+position:absolute;
+inset:0;
+border:2px solid transparent;
+border-radius:28px;
+transition:.6s ease;
+}
+
+.course-card:hover{
+transform:rotateY(12deg) rotateX(6deg) scale(1.05);
+}
+
+.course-card:hover::before{
+border-color:#ff9a2f;
+box-shadow:0 0 28px #ff9a2f;
+}
+
+.course-card:hover img{
+transform:scale(1.15);
+}
+
+.course-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(transparent,rgba(0,0,0,.82));
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+padding:26px;
+opacity:0;
+transition:.4s ease;
+}
+
+.course-card:hover .course-overlay{
+opacity:1;
+}
+
+.course-overlay h4{
+color:white;
+font-size:22px;
+margin-bottom:12px;
+}
+
+.course-overlay button{
+border:none;
+padding:11px 26px;
+border-radius:25px;
+background:linear-gradient(45deg,#ff8c00,#ff3c3c,#7b3cff);
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:.4s ease;
+}
+
+.course-overlay button:hover{
+transform:translateY(-3px) scale(1.05);
+box-shadow:0 12px 30px rgba(255,140,0,.6);
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for row 1 */
+  grid-template-rows: repeat(2, auto);  /* 2 rows */
+  gap: 40px;
+  perspective: 1200px;
+}
+
+.course-grid .course-card:nth-child(4) {
+  grid-column: 1 / 3; /* 2nd row, first card spans 1 column */
+}
+
+.course-grid .course-card:nth-child(5) {
+  grid-column: 3 / 4; /* 2nd row, second card in 3rd column */
+}
+@media(max-width:900px){
+  .course-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-rows: auto;
+  }
+  .course-grid .course-card:nth-child(4),
+  .course-grid .course-card:nth-child(5) {
+    grid-column: auto;
+  }
+}
+
+/*backround effect */
+.bg-cards {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none; /* so you can still click cards */
+}
+
+.course-section {
+  position: relative; /* make sure background stays behind cards */
+  z-index: 1;
+}
+
+.bg-cards .circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(45px);
+  opacity: .35;
+  animation: float 14s infinite alternate ease-in-out;
+}
+
+.bg-cards .c1{width:320px;height:320px;background:var(--purple);top:-80px;left:-80px;}
+.bg-cards .c2{width:280px;height:280px;background:var(--orange);top:45%;right:-100px;animation-delay:2s;}
+.bg-cards .c3{width:240px;height:240px;background:var(--red);bottom:-90px;left:40%;animation-delay:4s;}
+.bg-cards .c4{width:200px;height:200px;background:var(--yellow);top:18%;left:65%;animation-delay:6s;}
+
+
+/* ===== Our Sucess Stats ===== */
+.success-modern {
+  padding: 100px 6%;
+  background: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.success-modern h2 {
+  font-size: 44px;
+  font-weight: 800;
+  margin-bottom: 80px;
+  background: linear-gradient(120deg, #845ef7, #ff5fa2);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.success-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.success-box {
+  flex: 1;
+  min-width: 160px;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.success-box h3 {
+  font-size: 64px;
+  font-weight: 900;
+  background: linear-gradient(120deg, #6a5cff, #ff5fa2);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(106, 92, 255, 0.35);
+}
+
+.success-box p {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.success-box span {
+  font-size: 14px;
+  color: #777;
+}
+
+.line {
+  width: 1px;
+  height: 90px;
+  background: linear-gradient(to bottom, transparent, #ddd, transparent);
+}
+
+/* Hover effect for premium feel */
+.glow-card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #845ef7, #ff5fa2, #ffa94d);
+  opacity: 0;
+  border-radius: 25px;
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+.glow-card:hover::before {
+  opacity: 0.12;
+  transform: scale(1.1);
+}
+
+.success-box * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive adjustments */
+@media(max-width:900px){
+  .success-row{
+    flex-direction: column;
+  }
+  .line{
+    width: 80%;
+    height: 1px;
+    margin: 20px auto;
+  }
+}
+
+/* ===== Testimonials ===== */
+.slider{
+display:flex;
+overflow:hidden;
+}
+
+.slide{
+min-width:100%;
+padding:40px;
+text-align:center;
+font-size:20px;
+animation:slide 12s infinite;
+}
+
+@keyframes slide{
+0%,30%{transform:translateX(0)}
+35%,65%{transform:translateX(-100%)}
+70%,100%{transform:translateX(-200%)}
+}
+/*testimonial section*/
+
+/* Light Sloped Testimonials + Video Section */
+.testimonials-video-light {
+  position: relative;
+  background: #fef8f5;
+  padding: 80px 0;
+  color: #2b1a0f;
+}
+
+.alt-card:hover{
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.14),
+    0 0 14px rgba(212,175,55,.4);
+  transform: translateY(-6px);
+}
+
+.testimonials-video-light .section-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #d4af37, #b11226);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Testimonials Slider */
+.testimonial-slider {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+.testimonial-slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.testimonial-slider::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #d4af37, #b11226);
+  border-radius: 10px;
+}
+
+.testimonial-slide {
+  min-width: 300px;
+  max-width: 400px;
+  scroll-snap-align: start;
+  background: rgba(255,255,255,0.8);
+  padding: 25px 20px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  font-style: italic;
+  transition: transform 0.4s ease;
+}
+
+.testimonial-slide:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+
+.testimonial-slide h5 {
+  margin-top: 12px;
+  text-align: right;
+  color: #b11226;
+  font-weight: 600;
+}
+
+
+
+/* Add space between testimonial slider and video gallery */
+.testimonials-video-light .testimonial-slider {
+  margin-bottom: 60px; /* added gap */
+}
+
+
+/* Mobile adjustments */
+@media(max-width:768px){
+  .testimonial-slider { margin-bottom: 40px; } /* smaller gap on mobile */
+  .video-gallery { gap: 25px; }
+}
+.testimonial-slider {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+  scroll-behavior: smooth; /* smooth auto scroll */
+}
+
+
+.section-heading{
+    text-align: center !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.testimonials-video-light{
+    width: 100%;
+    overflow: visible;
+}
+.testimonial-slider{
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.o_grid_mode,
+.alt-grid,
+.testimonials-video-light{
+    width:100%;
+    max-width:100%;
+    margin:0 auto;
+}
+/* ===============================
+   MOBILE UX PREMIUM FIX PACK
+   =============================== */
+
+
+/* ===== Video start ===== */
+/* Video Section Styling */
+.video {
+  padding: 80px 8%;
+  background: #fef8f5;
+  text-align: center;
+  position: relative;
+}
+
+.video h2.section-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  background: linear-gradient(135deg, #d4af37, #b11226);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Video Oval Styling */
+.video-gallery {
+  display: grid;
+  grid-template-areas:
+    "v1 v2 v3"
+    ".  v4  .";
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+
+/* Oval Shape for each video */
+.video-oval {
+  width: 280px;
+  height: 160px;
+  border-radius: 50% / 50%;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.video-oval iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-oval:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+}
+
+/* Quincunx Layout Positioning */
+.video-oval:nth-child(1) { grid-area: v1; }
+.video-oval:nth-child(2) { grid-area: v2; }
+.video-oval:nth-child(3) { grid-area: v3; }
+.video-oval:nth-child(4) { grid-area: v4; }
+
+/* Optional: make the center (v4) slightly bigger */
+.video-oval:nth-child(4) {
+  width: 320px;
+  height: 180px;
+}
+
+/* Responsive Adjustments */
+@media(max-width: 900px){
+  .video-gallery {
+    grid-template-areas:
+      "v1"
+      "v2"
+      "v3"
+      "v4";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 30px;
+  }
+
+  .video-oval:nth-child(4){
+    width: 100%;
+    height: 200px;
+  }
+}
+
+
+/*video end*/
+
+
+/* ===== Form ===== */
+form{
+max-width:500px;
+margin:auto;
+display:grid;
+gap:15px;
+}
+
+input,textarea{
+padding:14px;
+border-radius:12px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+form button{
+padding:14px;
+border:none;
+border-radius:40px;
+background:linear-gradient(135deg,var(--orange),var(--purple));
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+
+/* ===== Responsive ===== */
+@media(max-width:900px){
+.hero{
+flex-direction:column;
+text-align:center;
+}
+.hero h1{font-size:44px;}
+.hero-img{font-size:180px;}
+nav{padding:18px 30px;}
+section{padding:70px 30px;}
+}
+/*footer*/
+/* ===== Footer ===== */
+.footer{
+background:linear-gradient(135deg,rgba(255,107,107,.9),rgba(132,94,247,.9));
+color:white;
+padding:80px 70px 30px;
+margin-top:80px;
+border-top-left-radius:80px;
+border-top-right-radius:80px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:40px;
+}
+
+.footer h3{
+font-size:28px;
+margin-bottom:15px;
+}
+
+.footer h4{
+font-size:20px;
+margin-bottom:12px;
+}
+
+.footer a{
+display:block;
+color:white;
+text-decoration:none;
+margin-bottom:8px;
+opacity:.9;
+transition:.3s;
+}
+
+.footer a:hover{
+opacity:1;
+transform:translateX(6px);
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:50px;
+opacity:.85;
+font-size:14px;
+}
+
+@media(max-width:900px){
+.footer{
+padding:60px 30px 25px;
+border-radius:50px 50px 0 0;
+}
+}
+@keyframes slide{
+0%,30%{transform:translateX(0)}
+35%,65%{transform:translateX(-100%)}
+70%,100%{transform:translateX(-200%)}
+}
+
+
+/*why choose section*/
+ /*new one*//* Why Choose Section */
+ 
+ .why-choose .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+.why-choose .row {
+  display: flex;
+  flex-wrap: wrap; /* allow stacking on small screens */
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.why-choose .row.reverse-row {
+  flex-direction: row-reverse;
+}
+
+.why-choose .col {
+  flex: 1 1 45%; /* two columns layout, each ~45% width */
+  max-width: 45%;
+}
+
+.why-choose .image-col img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.why-choose .text-col h2 {
+  font-size: 32px;
+  color: #5a3a1b;
+  margin-bottom: 20px;
+}
+
+.why-choose .text-col p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #2b1a0f;
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+  .why-choose .row,
+  .why-choose .row.reverse-row {
+    flex-direction: column;
+  }
+  .why-choose .col {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .why-choose .image-col img {
+    margin-bottom: 20px;
+  }
+}
+/* ===== Why Choose 3D Hover Card ===== */
+.why-card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 25px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  cursor: pointer;
+  perspective: 1200px;
+  padding: 30px;
+  margin-bottom: 50px;
+}
+
+.why-card .col {
+  transition: transform 0.5s ease;
+}
+
+/* 3D tilt effect on hover */
+.why-card:hover {
+  transform: rotateY(5deg) rotateX(2deg) translateY(-10px);
+  box-shadow: 0 35px 70px rgba(0,0,0,0.18);
+}
+
+.why-card:hover .image-col img {
+  transform: scale(1.05) rotateZ(1deg);
+}
+
+.why-card:hover .text-col {
+  transform: translateZ(10px);
+}
+
+/* Add overlay glow gradient if needed */
+.why-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #845ef7, #ff5fa2);
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+.why-card:hover::before {
+  opacity: 0.08;
+  transform: scale(1.05);
+}
+
+/* Keep text above overlay */
+.why-card .text-col, .why-card .image-col {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile adjustments */
+@media(max-width:900px){
+  .why-card {
+    transform: none !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    padding: 20px;
+  }
+  .why-card:hover {
+    transform: none;
+  }
+}
+/* Why Choose Section Hover Background */
+.why-choose {
+  position: relative;
+  transition: background 0.5s ease;
+}
+
+/* Faint brown overlay on hover */
+.why-choose:hover {
+  background-color: rgba(181, 136, 99, 0.1); /* faint brown */
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div class="bg">
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+<div class="circle c4"></div>
+<div class="circle c5"></div>
+<div class="circle c6"></div>
+</div>
+
+<nav>
+<div class="logo">Khandelwal Classes</div>
+<div class="menu">
+<a href="#">Home</a>
+<a href="#">Courses</a>
+<a href="#">Results</a>
+<a href="#">Reviews</a>
+<button>Enquiry</button>
+</div>
+</nav>
+
+<section class="hero">
+<div>
+<h1>Build Your <span>Engineering Future</span> With Experts</h1>
+<p>Premium coaching for engineering aspirants with proven results, modern learning & personal mentoring.</p>
+
+</div>
+<div class="hero-photo">
+  <img src="img/k1 (6).jpeg">
+</div>
+
+
+</section>
+
+<section class="course-section">
+<h2>Our Courses</h2>
+
+<div class="course-grid">
+
+<div class="course-card">
+<img src="img/k1 (5).jpeg">
+<div class="course-overlay">
+<h4>JEE Main Preparation</h4>
+<button>Explore Course</button>
+</div>
+</div>
+
+<div class="course-card">
+<img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f07?auto=format&fit=crop&w=900&q=80">
+<div class="course-overlay">
+<h4>JEE Advanced Coaching</h4>
+<button>Explore Course</button>
+</div>
+</div>
+
+<div class="course-card">
+<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80">
+<div class="course-overlay">
+<h4>Foundation Program</h4>
+<button>Explore Course</button>
+</div>
+</div>
+
+</div>
+</section><!---sucess section start-->
+
+<section class="success-modern">
+    <div class="bg-cards">
+  <div class="circle c1"></div>
+  <div class="circle c2"></div>
+  <div class="circle c3"></div>
+  <div class="circle c4"></div>
+</div>
+
+  <h2>Our Success Journey</h2>
+
+  <div class="success-row">
+
+    <div class="success-box glow-card">
+      <h3>10K+</h3>
+      <p>Students Trained</p>
+      <span>Across multiple batches</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="success-box glow-card">
+      <h3>30+</h3>
+      <p>Years of Excellence</p>
+      <span>Trusted education</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="success-box glow-card">
+      <h3>98%</h3>
+      <p>Success Rate</p>
+      <span>Outstanding results</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="success-box glow-card">
+      <h3>500</h3>
+      <p>Toppers</p>
+      <span>JEE • NEET • CET</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="success-box glow-card">
+      <h3>200</h3>
+      <p>Alumni</p>
+      <span>Doctors & Engineers</span>
+    </div>
+
+  </div>
+</section>
+
+<!--sucess section end-->
+    <!-- Testimonials + Video Section - Light & Premium -->
+    <section class="testimonials-video-light py-5">
+      <div class="container">
+
+        <h2 class="section-heading text-center mb-5" data-aos="fade-up">
+          What Our Students Say
+        </h2>
+
+        <!-- Testimonials Slider -->
+        <div class="testimonial-slider">
+          <div class="testimonial-slide">
+            <p>"Khandelwal Classes made every subject easy to understand. The faculty explains concepts simply, and the
+              library plus study space really helped me stay focused."
+            </p>
+            <h5>-
+              Sharvari Girme Engineering Student</h5>
+          </div>
+          <div class="testimonial-slide">
+            <p>The teachers here are excellent. Notes, tests, and guidance were always on point, and I got support
+              whenever I needed it."
+
+            </p>
+            <h5>- Mahipal Rajput - Medical Student</h5>
+          </div>
+          <div class="testimonial-slide">
+            <p>Khandelwal Classes gave me the flexibility to explore multiple career options. The guidance a discipline
+              here truly stand out."
+
+            </p>
+            <h5>- Rohan Shah - PCMB Student</h5>
+          </div>
+
+          <div class="testimonial-slide">
+            <p>"Khandelwal Classes transformed my learning experience. The teachers simplify every topic, and the study
+              environment makes it easy to focus and excel."</p>
+            <h5>- Ananya Deshmukh, JEE Student</h5>
+          </div>
+
+          <div class="testimonial-slide">
+            <p>"The guidance at Khandelwal Classes is outstanding. Their notes, tests, and personalized support helped
+              me prepare confidently for board exams."</p>
+            <h5>- Aditya Kulkarni, PCM Student</h5>
+          </div>
+
+          <div class="testimonial-slide">
+            <p>"Thanks to Khandelwal Classes, I could explore different career paths with proper mentorship. The
+              discipline and teaching here truly stand out."</p>
+            <h5>- Meera Patil, PCMB Student</h5>
+          </div>
+
+        </div>
+
+</section>
+
+
+ <section class="video">
+  <h2 class="section-heading">Watch Our Classes</h2>
+
+  <div class="video-gallery">
+    <div class="video-oval">
+      <iframe src="https://www.youtube.com/embed/hZJks7C2w-w" title="Lecture 1" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-oval">
+      <iframe src="https://www.youtube.com/embed/FJ5bj6H5eyo" title="Lecture 2" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-oval">
+      <iframe src="https://www.youtube.com/embed/j3f1lL3ig-o" title="Lecture 3" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-oval">
+      <iframe src="https://www.youtube.com/embed/w4qCV32aXuQ" title="Lecture 4" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-oval">
+      <iframe src="https://www.youtube.com/embed/EUb8f_6LrHk" title="Lecture 5" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-oval">
+      <iframe src="https://www.youtube.com/embed/lu-AzB6SVjk" title="Lecture 6" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!--why choose us -->
+<section class="why-choose">
+  <div class="container">
+    <!-- Row 1: Image Left, Text Right -->
+    <div class="row why-card">
+     
+      <div class="col text-col">
+        <h2>Why Choose Khandelwal Classes?</h2>
+        <p>
+          Khandelwal Classes offers premium coaching for school students, providing
+          personalized guidance, comprehensive study materials, and a proven track record
+          of success in board exams, JEE, and NEET foundations. Our expert faculty ensures
+          every student reaches their full potential.
+        </p>
+      </div>
+       <div class="col image-col">
+        <img src="img/k1 (4).jpeg" alt="Our Approach" />
+      </div>
+    </div>
+
+    <!-- Row 2: Text Left, Image Right -->
+    <div class="row reverse-row why-card">
+      <div class="col text-col">
+        <h2>Our Unique Approach</h2>
+        <p>
+          We focus on building conceptual clarity, interactive learning, and practical problem-solving skills.
+          Our small batch sizes and regular assessments guarantee individual attention, helping students
+          achieve top ranks and develop lifelong learning habits.
+        </p>
+      </div>
+      <div class="col image-col">
+        <img src="img/kc1 (3).jpeg" alt="Our Approach" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--why end-->
+
+<section>
+<h2>Free Enquiry</h2>
+<form>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Email">
+<input type="tel" placeholder="Phone">
+<textarea placeholder="Message"></textarea>
+<button>Submit</button>
+</form>
+</section>
+<footer class="footer">
+  <div class="footer-grid">
+
+    <div>
+      <h3>Khandelwal Classes</h3>
+      <p>Premium coaching institute for engineering aspirants with modern learning and proven success.</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">Courses</a>
+      <a href="#">Results</a>
+      <a href="#">Reviews</a>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p>📞 9892022570</p>
+      <p>📧 info@khandelwalclasses.com</p>
+      <p>📍 India</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Khandelwal Classes. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>
